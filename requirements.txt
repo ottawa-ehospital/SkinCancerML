@@ -27,4 +27,5 @@ gunicorn==20.1.0
 tensorflow-cpu
 flask-cors
 Pillow
-opencv==3.0.0
+opencv
+cv2==3.0.0
