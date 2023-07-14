@@ -1,30 +1,12 @@
-uvicorn~=0.20.0
-fastapi~=0.92.0
-pydantic~=1.10.5
 numpy
-scipy
-scikit-learn
-matplotlib
 pandas
-fastapi
-uvicorn
-gunicorn~=20.1.0
 httptools
 jsonify
 requests==2.26.0
-# scikit-learn==0.24.2
 # tensorflow==2.6.1
 # click==8.0.1
 Flask==1.1.4
-# itsdangerous==2.1.0
-# Jinja2==3.0.2
-# MarkupSafe==2.1.0
-# Werkzeug==2.0.2
 Keras
-numpy
-gunicorn==20.1.0
 #tensorflow-cpu==2.12.0rc1
 tensorflow-cpu
-flask-cors
-Pillow
 opencv-python==4.7.0.72
