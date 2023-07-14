@@ -28,7 +28,7 @@ def predict_label(img_path):
  
 	#p = model.predict(i)
 	
-	classes_x=np.argmax(p,axis=1)
+	
 	if model.predict(img_reshape) < 0:
 		return "Not Cancer "
 	elif model.predict(img_reshape) > 0:
