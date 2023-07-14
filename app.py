@@ -9,7 +9,7 @@ import cv2
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": ["http://localhost",
                                           "http://localhost:8080",
-                                          "http://myapp.herokuapp.com",
+                                          "https://myapp.herokuapp.com",
                                           "http://www.e-hospital.ca/Skincancer",
                                           "http://www.e-hospital.ca",
                                           "http://localhost:5000"]}})
