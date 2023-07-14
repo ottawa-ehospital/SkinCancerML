@@ -20,17 +20,16 @@ model.make_predict_function()
 
 def predict_label(img_path):
 	i = load_img(img_path, target_size=(244,244))
-	i = i.resize((150,150))
-	#i = img_to_array(i)/255.0
-	i = np.expand_dims(i, axis=0)
+	image = np.asarray(i)
+	img = image
+	img_resize = (cv2.resize(img, dsize=(244, 244),    interpolation=cv2.INTER_CUBIC))/255.
+        
+	img_reshape = img_resize[np.newaxis,...]
+ 
 	
-	#p = model.predict(i)
-	p=model.predict(i) 
-	
-	
-	if model.predict(i) < 0:
+	if model.predict(img_reshape) < 0:
 		return "Not Cancer"
-	elif model.predict(i) > 0:
+	elif model.predict(img_reshape) > 0:
 		return "Cancer"
 	else:
 		return "Incorrect Image"
