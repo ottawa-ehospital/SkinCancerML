@@ -4,7 +4,7 @@ from keras.utils import load_img
 #from keras.utils.image import img_to_array
 import numpy as np
 from flask_cors import CORS
-import cv2
+#import cv2
 
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": ["http://localhost",
