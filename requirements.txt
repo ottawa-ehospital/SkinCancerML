@@ -10,3 +10,6 @@ fastapi
 uvicorn
 gunicorn~=20.1.0
 httptools
+Flask 
+jsonify
+request
