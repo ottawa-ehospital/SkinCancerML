@@ -4,7 +4,7 @@ from keras.utils import load_img
 #from keras.utils.image import img_to_array
 import numpy as np
 from flask_cors import CORS
-import cv2
+#import cv2
 
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": ["http://localhost",
@@ -20,21 +20,17 @@ model.make_predict_function()
 
 def predict_label(img_path):
 	i = load_img(img_path, target_size=(244,244))
-	image = np.asarray(i)
-	img = image
-	img_resize = (cv2.resize(img, dsize=(244, 244),    interpolation=cv2.INTER_CUBIC))/255.
-        
-	img_reshape = img_resize[np.newaxis,...]
- 
-	#p = model.predict(i)
 	
+	i = i.resize((244,244))
+	
+	i = np.expand_dims(i, axis=0)
+	
+	p=model.predict(i) 
 	classes_x=np.argmax(p,axis=1)
-	if model.predict(img_reshape) < 0:
-		return "Not Cancer "
-	elif model.predict(img_reshape) > 0:
-		return "Cancer"
+	if p[0][0] < 0:
+		return "Not Cancer"
 	else:
-		return "Incorrect Image"
+		return "Cancer"
 
 @app.route("/", methods=['GET'])
 def main():
