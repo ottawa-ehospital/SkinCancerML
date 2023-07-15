@@ -25,12 +25,12 @@ def predict_label(img_path):
 	
 	i = np.expand_dims(i, axis=0)
 	
-	if model.predict(i) < 0:
+	p=model.predict(i) 
+	classes_x=np.argmax(p,axis=1)
+	if p[0][0] < 0:
 		return "Not Cancer"
-	elif model.predict(i) > 0:
-		return "Cancer"
 	else:
-		return "Incorrect Image"
+		return "Cancer"
 
 @app.route("/", methods=['GET'])
 def main():
