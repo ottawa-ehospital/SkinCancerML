@@ -7,6 +7,7 @@ from flask_cors import CORS
 #import cv2
 
 app = Flask(__name__)
+'''
 CORS(app, resources={r"/*": {"origins": ["http://localhost",
                                           "http://localhost:8080",
                                           "https://myapp.herokuapp.com",
@@ -14,6 +15,7 @@ CORS(app, resources={r"/*": {"origins": ["http://localhost",
                                           "http://www.e-hospital.ca",
                                           "http://localhost:5000"]}})
 
+'''
 model = load_model('my_model.hdf5')
 
 model.make_predict_function()
