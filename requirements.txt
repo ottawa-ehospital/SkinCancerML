@@ -13,3 +13,4 @@ gunicorn==20.1.0
 tensorflow-cpu
 flask-cors
 Pillow
+uvicorn~=0.20.0
